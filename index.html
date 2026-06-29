@@ -35,65 +35,85 @@ body{
 .biz{font-family:var(--mono);font-size:12px;color:var(--ink2);display:flex;align-items:center;gap:8px}
 .biz .dot{width:7px;height:7px;border-radius:50%;background:var(--teal2)}
 
-.wrap{max-width:1000px;margin:0 auto;padding:24px 28px 60px}
+.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
 
-/* KPI strip */
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
-.kpi{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
-.kpi .v{font-family:var(--disp);font-size:26px;font-weight:600;letter-spacing:-1px;line-height:1}
-.kpi .v.green{color:var(--green)}
-.kpi .l{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink3);margin-top:6px}
-.kpi .sub{font-size:11px;color:var(--ink2);margin-top:3px}
+/* OPPORTUNITY HERO — the distinct signature element */
+.opp{background:linear-gradient(135deg,var(--ink) 0%,#0c3942 100%);border-radius:18px;padding:26px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
+.opp::after{content:'';position:absolute;right:-40px;top:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.22),transparent 70%)}
+.opp-grid{display:flex;align-items:center;gap:32px;position:relative;z-index:1;flex-wrap:wrap}
+.opp .big{flex-shrink:0}
+.opp .big .lbl{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--teal2);margin-bottom:8px}
+.opp .big .v{font-family:var(--disp);font-size:48px;font-weight:700;letter-spacing:-2px;line-height:1}
+.opp .big .sub{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:7px}
+.opp .divider{width:1px;align-self:stretch;background:rgba(255,255,255,.12)}
+.opp .minis{display:flex;gap:28px;flex-wrap:wrap}
+.opp .mini .v{font-family:var(--disp);font-size:24px;font-weight:600;line-height:1}
+.opp .mini .v.teal{color:var(--teal2)}
+.opp .mini .l{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:rgba(255,255,255,.5);margin-top:5px}
 
-.bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-.bar h2{font-family:var(--disp);font-size:17px;font-weight:600}
-.bar .right{display:flex;align-items:center;gap:8px}
-.chip{font-family:var(--mono);font-size:10.5px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink2);cursor:pointer}
-.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.toggle-ch{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+/* worklist header */
+.wl-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.wl-head .ttl{font-family:var(--disp);font-size:16px;font-weight:600}
+.wl-head .ttl small{font-family:var(--mono);font-size:10.5px;color:var(--ink3);font-weight:400;margin-left:8px}
+.wl-head .right{display:flex;align-items:center;gap:8px}
+.toggle-ch{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
 .toggle-ch button{border:none;background:var(--bg);color:var(--ink2);font-family:var(--mono);font-size:10.5px;padding:6px 11px;cursor:pointer}
 .toggle-ch button.on{background:var(--bg3);color:var(--teal);font-weight:600}
+.chip{font-family:var(--mono);font-size:10.5px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink2);cursor:pointer}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 
-/* customer rows */
-.cust{background:var(--bg);border:1px solid var(--line);border-radius:13px;padding:15px 17px;margin-bottom:11px}
-.cust-top{display:flex;align-items:center;gap:13px}
-.cust-av{width:38px;height:38px;border-radius:50%;background:var(--bg3);display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--teal);font-weight:600;flex-shrink:0}
-.cust-meta{flex:1;min-width:0}
-.cust-name{font-weight:600;font-size:14.5px}
-.cust-info{font-family:var(--mono);font-size:10.5px;color:var(--ink3);margin-top:2px}
-.cust-right{text-align:right;flex-shrink:0}
-.overdue{font-family:var(--mono);font-size:10px;padding:3px 8px;border-radius:5px;font-weight:600;display:inline-block}
-.overdue.hot{background:var(--redbg);color:var(--red)}
-.overdue.warm{background:var(--amberbg);color:var(--amber)}
-.overdue.sent{background:var(--greenbg);color:var(--green)}
-.cust-val{font-family:var(--disp);font-size:15px;font-weight:600;margin-top:5px}
-.cust-val small{font-family:var(--mono);font-size:9px;color:var(--ink3);font-weight:400;display:block}
+/* column header row */
+.wl-cols{display:grid;grid-template-columns:1fr 150px 92px 132px;gap:14px;padding:10px 16px;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink3);border-bottom:1px solid var(--line)}
+.wl-cols div:nth-child(3){text-align:right}.wl-cols div:nth-child(4){text-align:right}
 
-.draftbox{margin-top:13px;border:1px solid var(--line);border-left:3px solid var(--teal2);border-radius:0 10px 10px 0;background:var(--bg2);padding:12px 14px;display:none}
-.draftbox.show{display:block;animation:fade .3s}
-@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
-.draftbox .dh{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);margin-bottom:7px;display:flex;align-items:center;gap:6px}
-.draftbox .dh .ai{background:var(--bg3);color:var(--teal);padding:2px 7px;border-radius:5px;font-weight:600}
-.draftbox .dtext{font-size:13px;line-height:1.55;color:var(--ink);white-space:pre-wrap}
-.draft-actions{display:flex;gap:8px;margin-top:12px}
+/* worklist rows — dense */
+.row{background:var(--bg);border:1px solid var(--line);border-radius:11px;margin-top:9px;overflow:hidden;transition:border-color .15s}
+.row:hover{border-color:var(--teal2)}
+.row-main{display:grid;grid-template-columns:1fr 150px 92px 132px;gap:14px;align-items:center;padding:13px 16px;cursor:pointer}
+.who{display:flex;align-items:center;gap:11px;min-width:0}
+.who .av{width:34px;height:34px;border-radius:9px;background:var(--bg3);display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--teal);font-weight:600;flex-shrink:0}
+.who .nm{font-weight:600;font-size:13.5px;line-height:1.2}
+.who .sv{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:2px}
+/* overdue meter */
+.meter{}
+.meter .bar{height:6px;border-radius:3px;background:var(--bg3);overflow:hidden}
+.meter .bar i{display:block;height:100%;border-radius:3px}
+.meter .txt{font-family:var(--mono);font-size:9.5px;margin-top:4px;color:var(--ink2)}
+.val{font-family:var(--disp);font-size:16px;font-weight:600;text-align:right}
+.act{text-align:right}
+.rowbtn{font-family:var(--font);font-size:12px;font-weight:600;border:none;border-radius:7px;padding:7px 12px;cursor:pointer;background:var(--ink);color:#fff}
+.rowbtn:hover{background:#0c3942}
+.rowbtn:disabled{opacity:.6;cursor:default}
+.rowbtn.sent{background:var(--greenbg);color:var(--green);cursor:default}
+.rowbtn .spin{display:inline-block;width:11px;height:11px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-.cust-cta{display:flex;gap:8px;margin-top:12px}
+/* expanded draft drawer */
+.drawer{border-top:1px solid var(--line);background:var(--bg2);padding:0 16px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
+.drawer.open{max-height:340px;padding:14px 16px}
+.drawer .dh{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.drawer .dh .ai{background:var(--bg3);color:var(--teal);padding:2px 7px;border-radius:5px;font-weight:600}
+.drawer .dtext{font-size:13px;line-height:1.55;color:var(--ink);white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-left:3px solid var(--teal2);border-radius:0 9px 9px 0;padding:12px 14px}
+.drawer .da{display:flex;gap:8px;margin-top:12px}
 .minibtn{font-family:var(--font);font-size:12.5px;font-weight:600;border:none;border-radius:8px;padding:8px 14px;cursor:pointer;display:flex;align-items:center;gap:6px}
-.minibtn.d{background:var(--ink);color:#fff}.minibtn.d:hover{background:#0c3942}
-.minibtn.d:disabled{opacity:.6;cursor:default}
-.minibtn.g{background:var(--bg);border:1px solid var(--line);color:var(--ink2)}.minibtn.g:hover{background:var(--bg2)}
 .minibtn.send{background:var(--teal);color:#fff}.minibtn.send:hover{background:var(--teal2)}
+.minibtn.g{background:var(--bg);border:1px solid var(--line);color:var(--ink2)}.minibtn.g:hover{background:var(--bg2)}
 
 .loading{text-align:center;padding:40px;color:var(--ink3);font-family:var(--mono);font-size:12px}
-.spin{display:inline-block;width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--teal2);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}
-@keyframes spin{to{transform:rotate(360deg)}}
+.spin2{display:inline-block;width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--teal2);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}
 
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 19px;border-radius:11px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:9px;opacity:0;pointer-events:none;transition:all .3s;z-index:50}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast .ck{color:var(--teal2)}
-
 .foot{text-align:center;padding:24px;font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.4px}
-@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.wrap{padding:20px 18px 50px}}
+
+@media(max-width:760px){
+  .wl-cols{display:none}
+  .row-main{grid-template-columns:1fr auto;gap:10px}
+  .row-main .meter,.row-main .val{display:none}
+  .opp-grid{gap:20px}.opp .divider{display:none}.opp .big .v{font-size:38px}
+  .wrap{padding:20px 18px 50px}
+}
 </style>
 </head>
 <body>
@@ -104,17 +124,29 @@ body{
 </div>
 
 <div class="wrap">
-  <div class="kpis">
-    <div class="kpi"><div class="v green" id="kPipeline">—</div><div class="l">Pipeline in dormant list</div><div class="sub" id="kPipelineSub">&nbsp;</div></div>
-    <div class="kpi"><div class="v" id="kDue">—</div><div class="l">Customers due now</div><div class="sub">past their service window</div></div>
-    <div class="kpi"><div class="v" id="kSent">—</div><div class="l">Reactivations sent</div><div class="sub">this month</div></div>
-    <div class="kpi"><div class="v" id="kRate">—</div><div class="l">Est. win-back rate</div><div class="sub">existing vs. new lead</div></div>
+  <!-- opportunity hero -->
+  <div class="opp">
+    <div class="opp-grid">
+      <div class="big">
+        <div class="lbl">Reactivation pipeline</div>
+        <div class="v" id="oppV">—</div>
+        <div class="sub" id="oppSub">&nbsp;</div>
+      </div>
+      <div class="divider"></div>
+      <div class="minis">
+        <div class="mini"><div class="v teal" id="mDue">—</div><div class="l">Due now</div></div>
+        <div class="mini"><div class="v" id="mSent">—</div><div class="l">Sent this mo.</div></div>
+        <div class="mini"><div class="v" id="mRate">65%</div><div class="l">Win-back rate</div></div>
+        <div class="mini"><div class="v" id="mAvg">—</div><div class="l">Avg job value</div></div>
+      </div>
+    </div>
   </div>
 
-  <div class="bar">
-    <h2>Customers due for follow-up</h2>
+  <!-- worklist -->
+  <div class="wl-head">
+    <div class="ttl">Due for follow-up<small id="wlCount">sorted by priority</small></div>
     <div class="right">
-      <div class="toggle-ch" id="chToggle" title="Draft messages for email or SMS">
+      <div class="toggle-ch" id="chToggle">
         <button class="on" data-ch="email">Email</button>
         <button data-ch="sms">SMS</button>
       </div>
@@ -122,8 +154,10 @@ body{
       <span class="chip" data-f="sent">Sent</span>
     </div>
   </div>
-
-  <div id="feed"><div class="loading"><span class="spin"></span>Loading customers…</div></div>
+  <div class="wl-cols">
+    <div>Customer</div><div>Overdue</div><div>Value</div><div>Action</div>
+  </div>
+  <div id="feed"><div class="loading"><span class="spin2"></span>Loading customers…</div></div>
 </div>
 
 <div class="foot">REACTIVATION ENGINE · DEMO ENVIRONMENT · LIVE AI · SEEDED DATA</div>
@@ -143,52 +177,74 @@ function overdueDays(c){const due=new Date(c.last_service_date);due.setDate(due.
 
 async function load(){
   try{
-    const r=await fetch(`${URL_}/rest/v1/reactivation_customers?select=*&order=last_service_date.asc`,{headers:H});
+    const r=await fetch(`${URL_}/rest/v1/reactivation_customers?select=*`,{headers:H});
     customers=await r.json();
-    renderKpis(); renderFeed();
+    renderHero(); renderFeed();
   }catch(e){ $('feed').innerHTML='<div class="loading">Could not load customers.</div>'; }
 }
 
-function renderKpis(){
+function renderHero(){
   if(!customers.length)return;
   const due=customers.filter(c=>c.status!=='sent');
   const pipeline=due.reduce((a,c)=>a+(c.estimated_value||0),0);
-  $('kPipeline').textContent='$'+pipeline.toLocaleString();
-  $('kPipelineSub').textContent=`${due.length} dormant customers`;
-  $('kDue').textContent=due.length;
-  $('kSent').textContent=customers.filter(c=>c.status==='sent').length;
-  $('kRate').textContent='65%';
+  const avg=due.length?Math.round(pipeline/due.length):0;
+  $('oppV').textContent='$'+pipeline.toLocaleString();
+  $('oppSub').textContent=`${due.length} customers past their service interval`;
+  $('mDue').textContent=due.length;
+  $('mSent').textContent=customers.filter(c=>c.status==='sent').length;
+  $('mAvg').textContent='$'+avg;
 }
 
 function renderFeed(){
-  const list=customers.filter(c=>filter==='sent'?c.status==='sent':c.status!=='sent');
+  let list=customers.filter(c=>filter==='sent'?c.status==='sent':c.status!=='sent');
+  // prioritize: most overdue * value to top
+  if(filter!=='sent') list.sort((a,b)=>(overdueDays(b)+b.estimated_value)-(overdueDays(a)+a.estimated_value));
+  $('wlCount').textContent = filter==='sent' ? `${list.length} contacted` : `${list.length} due · sorted by priority`;
   if(!list.length){ $('feed').innerHTML='<div class="loading">No customers in this filter.</div>'; return; }
+
+  const maxOd=Math.max(...list.map(c=>Math.max(overdueDays(c),1)),1);
   $('feed').innerHTML=list.map(c=>{
     const od=overdueDays(c);
-    const odClass=c.status==='sent'?'sent':od>180?'hot':'warm';
-    const odLabel=c.status==='sent'?'sent':od>0?`${od} days overdue`:'due soon';
+    const pct=Math.max(8,Math.min(100,Math.round(od/maxOd*100)));
+    const col=od>180?'var(--red)':od>60?'var(--amber)':'var(--teal2)';
     const ms=monthsSince(c.last_service_date);
     const hasDraft=c.draft_message&&c.draft_message.trim();
-    return `<div class="cust" data-id="${c.id}">
-      <div class="cust-top">
-        <div class="cust-av">${initials(c.customer_name)}</div>
-        <div class="cust-meta">
-          <div class="cust-name">${c.customer_name}</div>
-          <div class="cust-info">${c.last_service} · ${ms} mo ago · ${c.phone||''}</div>
+    const sent=c.status==='sent';
+    return `<div class="row" data-id="${c.id}">
+      <div class="row-main" onclick="toggleDrawer('${c.id}')">
+        <div class="who">
+          <div class="av">${initials(c.customer_name)}</div>
+          <div><div class="nm">${c.customer_name}</div><div class="sv">${c.last_service} · ${ms} mo ago</div></div>
         </div>
-        <div class="cust-right">
-          <span class="overdue ${odClass}">${odLabel}</span>
-          <div class="cust-val">$${(c.estimated_value||0)}<small>est. job value</small></div>
+        <div class="meter">
+          ${sent?'<div class="txt" style="color:var(--green)">✓ reached out</div>':
+            `<div class="bar"><i style="width:${pct}%;background:${col}"></i></div><div class="txt">${od>0?od+' days overdue':'due soon'}</div>`}
+        </div>
+        <div class="val">$${c.estimated_value||0}</div>
+        <div class="act">
+          ${sent?'<button class="rowbtn sent">Sent</button>':
+            hasDraft?`<button class="rowbtn" onclick="event.stopPropagation();toggleDrawer('${c.id}',true)">Review</button>`:
+            `<button class="rowbtn" onclick="event.stopPropagation();draftFor('${c.id}',this)">✦ Draft</button>`}
         </div>
       </div>
-      ${hasDraft?`<div class="draftbox show"><div class="dh"><span class="ai">AI DRAFT</span> ${channel==='sms'?'text':'email'} · ready to send</div><div class="dtext">${c.draft_message}</div>
-        <div class="draft-actions">
+      <div class="drawer ${hasDraft&&!sent?'':''}" id="dw-${c.id}">
+        <div class="dh"><span class="ai">AI DRAFT</span> ${channel==='sms'?'text message':'email'} · personalized for ${c.customer_name.split(' ')[0]}</div>
+        <div class="dtext" id="dt-${c.id}">${hasDraft?c.draft_message:''}</div>
+        <div class="da">
           <button class="minibtn send" onclick="sendFor('${c.id}')">Send ${channel==='sms'?'text':'email'}</button>
           <button class="minibtn g" onclick="copyFor('${c.id}')">Copy</button>
-        </div></div>`:''}
-      ${c.status!=='sent'&&!hasDraft?`<div class="cust-cta"><button class="minibtn d" onclick="draftFor('${c.id}',this)">✦ Draft win-back message</button></div>`:''}
+        </div>
+      </div>
     </div>`;
   }).join('');
+}
+
+function toggleDrawer(id,force){
+  const dw=$('dw-'+id); if(!dw)return;
+  const c=customers.find(x=>x.id===id);
+  if(!(c.draft_message&&c.draft_message.trim())) return; // nothing to show yet
+  if(force) dw.classList.add('open');
+  else dw.classList.toggle('open');
 }
 
 async function callAI(c){
@@ -203,19 +259,20 @@ async function callAI(c){
 
 async function draftFor(id,btn){
   const c=customers.find(x=>x.id===id);
-  btn.disabled=true; btn.innerHTML='<span class="spin"></span>Drafting…';
+  btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
   try{
     const msg=await callAI(c);
     await fetch(`${URL_}/rest/v1/reactivation_customers?id=eq.${id}`,{method:'PATCH',headers:H,body:JSON.stringify({draft_message:msg,status:'drafted'})});
     c.draft_message=msg; c.status='drafted';
     renderFeed();
+    setTimeout(()=>{const dw=$('dw-'+id);if(dw)dw.classList.add('open');},60);
     toast('Win-back message drafted');
-  }catch(e){ btn.disabled=false; btn.textContent='✦ Draft win-back message'; toast('Error: '+e.message); }
+  }catch(e){ btn.disabled=false; btn.textContent='✦ Draft'; toast('Error: '+e.message); }
 }
 async function sendFor(id){
   await fetch(`${URL_}/rest/v1/reactivation_customers?id=eq.${id}`,{method:'PATCH',headers:H,body:JSON.stringify({status:'sent'})});
   const c=customers.find(x=>x.id===id); c.status='sent';
-  renderKpis(); renderFeed();
+  renderHero(); renderFeed();
   toast('Sent · moved to reactivations');
 }
 function copyFor(id){
@@ -224,8 +281,7 @@ function copyFor(id){
   toast('Copied to clipboard');
 }
 
-// filters + channel
-document.querySelector('.bar .right').addEventListener('click',e=>{
+document.querySelector('.wl-head .right').addEventListener('click',e=>{
   const chip=e.target.closest('.chip');
   if(chip){ filter=chip.dataset.f; document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===chip)); renderFeed(); return; }
   const chBtn=e.target.closest('[data-ch]');
