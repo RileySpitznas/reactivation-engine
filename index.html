@@ -35,62 +35,74 @@ body{
 .biz{font-family:var(--mono);font-size:12px;color:var(--ink2);display:flex;align-items:center;gap:8px}
 .biz .dot{width:7px;height:7px;border-radius:50%;background:var(--teal2)}
 
-.wrap{max-width:980px;margin:0 auto;padding:24px 28px 60px}
+.wrap{max-width:1060px;margin:0 auto;padding:22px 28px 60px}
 
-/* OPPORTUNITY HERO — the distinct signature element */
-.opp{background:linear-gradient(135deg,var(--ink) 0%,#0c3942 100%);border-radius:18px;padding:26px 28px;color:#fff;margin-bottom:20px;position:relative;overflow:hidden}
-.opp::after{content:'';position:absolute;right:-40px;top:-40px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.22),transparent 70%)}
-.opp-grid{display:flex;align-items:center;gap:32px;position:relative;z-index:1;flex-wrap:wrap}
-.opp .big{flex-shrink:0}
-.opp .big .lbl{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--teal2);margin-bottom:8px}
-.opp .big .v{font-family:var(--disp);font-size:48px;font-weight:700;letter-spacing:-2px;line-height:1}
-.opp .big .sub{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:7px}
+/* opportunity hero */
+.opp{background:linear-gradient(135deg,var(--ink) 0%,#0c3942 100%);border-radius:16px;padding:22px 26px;color:#fff;margin-bottom:18px;position:relative;overflow:hidden}
+.opp::after{content:'';position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(20,184,166,.22),transparent 70%)}
+.opp-grid{display:flex;align-items:center;gap:30px;position:relative;z-index:1;flex-wrap:wrap}
+.opp .big .lbl{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.6px;color:var(--teal2);margin-bottom:7px}
+.opp .big .v{font-family:var(--disp);font-size:42px;font-weight:700;letter-spacing:-2px;line-height:1}
+.opp .big .sub{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:6px}
 .opp .divider{width:1px;align-self:stretch;background:rgba(255,255,255,.12)}
-.opp .minis{display:flex;gap:28px;flex-wrap:wrap}
-.opp .mini .v{font-family:var(--disp);font-size:24px;font-weight:600;line-height:1}
+.opp .minis{display:flex;gap:26px;flex-wrap:wrap}
+.opp .mini .v{font-family:var(--disp);font-size:22px;font-weight:600;line-height:1}
 .opp .mini .v.teal{color:var(--teal2)}
 .opp .mini .l{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:rgba(255,255,255,.5);margin-top:5px}
 
-/* worklist header */
-.wl-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
-.wl-head .ttl{font-family:var(--disp);font-size:16px;font-weight:600}
-.wl-head .ttl small{font-family:var(--mono);font-size:10.5px;color:var(--ink3);font-weight:400;margin-left:8px}
-.wl-head .right{display:flex;align-items:center;gap:8px}
+/* filter bar */
+.filterbar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.filterbar .flabel{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink3);margin-right:2px}
+.fsel{appearance:none;-webkit-appearance:none;border:1px solid var(--line);border-radius:8px;background:var(--bg) url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='6'%3E%3Cpath d='M1 1l3.5 3.5L8 1' stroke='%235B7377' stroke-width='1.4' fill='none'/%3E%3C/svg%3E") no-repeat right 10px center;padding:7px 26px 7px 11px;font-family:var(--font);font-size:12.5px;color:var(--ink);cursor:pointer}
+.fsel:focus{outline:none;border-color:var(--teal2)}
+.spacer{flex:1}
 .toggle-ch{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg)}
-.toggle-ch button{border:none;background:var(--bg);color:var(--ink2);font-family:var(--mono);font-size:10.5px;padding:6px 11px;cursor:pointer}
+.toggle-ch button{border:none;background:var(--bg);color:var(--ink2);font-family:var(--mono);font-size:10.5px;padding:7px 11px;cursor:pointer}
 .toggle-ch button.on{background:var(--bg3);color:var(--teal);font-weight:600}
-.chip{font-family:var(--mono);font-size:10.5px;padding:6px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink2);cursor:pointer}
+.chip{font-family:var(--mono);font-size:10.5px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink2);cursor:pointer}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 
-/* column header row */
-.wl-cols{display:grid;grid-template-columns:1fr 150px 92px 132px;gap:14px;padding:10px 16px;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink3);border-bottom:1px solid var(--line)}
-.wl-cols div:nth-child(3){text-align:right}.wl-cols div:nth-child(4){text-align:right}
+/* bulk action bar */
+.bulkbar{display:none;align-items:center;gap:12px;background:var(--ink);color:#fff;border-radius:12px;padding:11px 16px;margin-bottom:12px;animation:fade .2s}
+.bulkbar.show{display:flex}
+.bulkbar .bn{font-family:var(--disp);font-size:14px;font-weight:600}
+.bulkbar .bt{font-size:12.5px;color:rgba(255,255,255,.65)}
+.bulkbar .sp{flex:1}
+.bulkbtn{border:none;border-radius:8px;padding:8px 15px;font-family:var(--font);font-size:12.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px}
+.bulkbtn.go{background:var(--teal2);color:var(--ink)}
+.bulkbtn.go:hover{background:#2fd0be}
+.bulkbtn.clear{background:transparent;color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.25)}
+.bulkbtn.clear:hover{color:#fff}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
 
-/* worklist rows — dense */
+/* worklist */
+.wl-cols{display:grid;grid-template-columns:34px 1fr 130px 120px 74px 100px;gap:12px;padding:10px 14px;font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.4px;color:var(--ink3);border-bottom:1px solid var(--line);align-items:center}
+.wl-cols .num{text-align:right}
 .row{background:var(--bg);border:1px solid var(--line);border-radius:11px;margin-top:9px;overflow:hidden;transition:border-color .15s}
 .row:hover{border-color:var(--teal2)}
-.row-main{display:grid;grid-template-columns:1fr 150px 92px 132px;gap:14px;align-items:center;padding:13px 16px;cursor:pointer}
-.who{display:flex;align-items:center;gap:11px;min-width:0}
-.who .av{width:34px;height:34px;border-radius:9px;background:var(--bg3);display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--teal);font-weight:600;flex-shrink:0}
+.row.selected{border-color:var(--teal);background:#FBFEFD}
+.row-main{display:grid;grid-template-columns:34px 1fr 130px 120px 74px 100px;gap:12px;align-items:center;padding:12px 14px}
+.ckbx{width:17px;height:17px;accent-color:var(--teal);cursor:pointer}
+.who{display:flex;align-items:center;gap:10px;min-width:0;cursor:pointer}
+.who .av{width:33px;height:33px;border-radius:9px;background:var(--bg3);display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--teal);font-weight:600;flex-shrink:0}
 .who .nm{font-weight:600;font-size:13.5px;line-height:1.2}
-.who .sv{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-top:2px}
-/* overdue meter */
-.meter{}
-.meter .bar{height:6px;border-radius:3px;background:var(--bg3);overflow:hidden}
-.meter .bar i{display:block;height:100%;border-radius:3px}
-.meter .txt{font-family:var(--mono);font-size:9.5px;margin-top:4px;color:var(--ink2)}
-.val{font-family:var(--disp);font-size:16px;font-weight:600;text-align:right}
+.who .ad{font-family:var(--mono);font-size:9.5px;color:var(--ink3);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.svc{font-size:12.5px;color:var(--ink2)}
+.svc .ar{font-family:var(--mono);font-size:9.5px;color:var(--ink3);margin-top:2px}
+.touch .bar{height:6px;border-radius:3px;background:var(--bg3);overflow:hidden}
+.touch .bar i{display:block;height:100%;border-radius:3px}
+.touch .txt{font-family:var(--mono);font-size:9.5px;margin-top:4px;color:var(--ink2)}
+.val{font-family:var(--disp);font-size:15px;font-weight:600;text-align:right}
 .act{text-align:right}
-.rowbtn{font-family:var(--font);font-size:12px;font-weight:600;border:none;border-radius:7px;padding:7px 12px;cursor:pointer;background:var(--ink);color:#fff}
+.rowbtn{font-family:var(--font);font-size:12px;font-weight:600;border:none;border-radius:7px;padding:7px 11px;cursor:pointer;background:var(--ink);color:#fff}
 .rowbtn:hover{background:#0c3942}
 .rowbtn:disabled{opacity:.6;cursor:default}
 .rowbtn.sent{background:var(--greenbg);color:var(--green);cursor:default}
-.rowbtn .spin{display:inline-block;width:11px;height:11px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle}
+.spin{display:inline-block;width:11px;height:11px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
 
-/* expanded draft drawer */
 .drawer{border-top:1px solid var(--line);background:var(--bg2);padding:0 16px;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s ease}
-.drawer.open{max-height:340px;padding:14px 16px}
+.drawer.open{max-height:360px;padding:14px 16px}
 .drawer .dh{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .drawer .dh .ai{background:var(--bg3);color:var(--teal);padding:2px 7px;border-radius:5px;font-weight:600}
 .drawer .dtext{font-size:13px;line-height:1.55;color:var(--ink);white-space:pre-wrap;background:#fff;border:1px solid var(--line);border-left:3px solid var(--teal2);border-radius:0 9px 9px 0;padding:12px 14px}
@@ -99,20 +111,59 @@ body{
 .minibtn.send{background:var(--teal);color:#fff}.minibtn.send:hover{background:var(--teal2)}
 .minibtn.g{background:var(--bg);border:1px solid var(--line);color:var(--ink2)}.minibtn.g:hover{background:var(--bg2)}
 
-.loading{text-align:center;padding:40px;color:var(--ink3);font-family:var(--mono);font-size:12px}
-.spin2{display:inline-block;width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--teal2);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}
+/* bulk modal */
+.bmw{position:fixed;inset:0;background:rgba(10,46,54,.45);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+.bmw.show{display:flex;animation:fade .2s}
+.bbox{background:#fff;border-radius:18px;max-width:560px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(10,46,54,.3);max-height:90vh;overflow-y:auto}
+.bbox h2{font-family:var(--disp);font-size:18px;font-weight:600;margin-bottom:4px}
+.bbox .bsub{font-size:12.5px;color:var(--ink2);margin-bottom:16px}
+.bbox .bsub b{color:var(--ink)}
+.btags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.btag{font-family:var(--mono);font-size:10px;background:var(--bg3);color:var(--teal);padding:4px 10px;border-radius:6px}
+.bdraft{border:1px solid var(--line);border-left:3px solid var(--teal2);border-radius:0 10px 10px 0;background:var(--bg2);padding:13px 15px;margin-bottom:8px}
+.bdraft .dh{font-family:var(--mono);font-size:9px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink2);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.bdraft .dh .ai{background:var(--bg3);color:var(--teal);padding:2px 7px;border-radius:5px;font-weight:600}
+.bdraft .dtext{font-size:13.5px;line-height:1.6;color:var(--ink);white-space:pre-wrap}
+.bdraft .dtext .tok{background:var(--amberbg);color:var(--amber);font-family:var(--mono);font-size:12px;padding:1px 6px;border-radius:5px;font-weight:600}
+.bhint{font-family:var(--mono);font-size:10px;color:var(--ink3);margin-bottom:16px}
+.bload{display:flex;align-items:center;gap:9px;justify-content:center;padding:26px 0;color:var(--ink2);font-size:13px}
+.bload .spin2{width:15px;height:15px;border:2px solid var(--line);border-top-color:var(--teal2);border-radius:50%;animation:spin .7s linear infinite}
+.bfoot{display:flex;gap:10px;margin-top:6px}
+.bfoot button{flex:1;border-radius:10px;padding:12px;font-family:var(--font);font-size:14px;font-weight:600;cursor:pointer;border:none}
+.bfoot .go{background:var(--teal);color:#fff}
+.bfoot .go:hover{background:var(--teal2)}
+.bfoot .go:disabled{opacity:.5;cursor:default}
+.bfoot .cancel{background:var(--bg);border:1px solid var(--line);color:var(--ink2)}
+.bdone{text-align:center;padding:14px 0 4px}
+.bdone .big{width:60px;height:60px;border-radius:50%;background:var(--greenbg);color:var(--green);display:grid;place-items:center;font-size:30px;margin:0 auto 14px;animation:ring .5s ease}
+@keyframes ring{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1)}}
+.bdone h3{font-family:var(--disp);font-size:19px;font-weight:600;margin-bottom:5px}
+.bdone p{font-size:13px;color:var(--ink2)}
 
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 19px;border-radius:11px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:9px;opacity:0;pointer-events:none;transition:all .3s;z-index:50}
+.loading{text-align:center;padding:40px;color:var(--ink3);font-family:var(--mono);font-size:12px}
+.spin3{display:inline-block;width:13px;height:13px;border:2px solid var(--line);border-top-color:var(--teal2);border-radius:50%;animation:spin .7s linear infinite;vertical-align:middle;margin-right:7px}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:12px 19px;border-radius:11px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:9px;opacity:0;pointer-events:none;transition:all .3s;z-index:110}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .toast .ck{color:var(--teal2)}
 .foot{text-align:center;padding:24px;font-family:var(--mono);font-size:10px;color:var(--ink3);letter-spacing:.4px}
 
-@media(max-width:760px){
+/* responsive */
+@media(max-width:900px){
   .wl-cols{display:none}
-  .row-main{grid-template-columns:1fr auto;gap:10px}
-  .row-main .meter,.row-main .val{display:none}
-  .opp-grid{gap:20px}.opp .divider{display:none}.opp .big .v{font-size:38px}
-  .wrap{padding:20px 18px 50px}
+  .row-main{grid-template-columns:30px 1fr auto;gap:10px}
+  .row-main .svc,.row-main .touch,.row-main .val{display:none}
+  .opp .big .v{font-size:34px}
+  .opp-grid{gap:18px}
+  .opp .divider{display:none}
+}
+@media(max-width:640px){
+  .wrap{padding:16px 14px 50px}
+  .filterbar{gap:7px}
+  .fsel{font-size:12px;padding:7px 24px 7px 9px}
+  .bulkbar{flex-wrap:wrap;gap:8px}
+  .bulkbar .bt{display:none}
+  .bbox{padding:18px}
 }
 </style>
 </head>
@@ -124,7 +175,6 @@ body{
 </div>
 
 <div class="wrap">
-  <!-- opportunity hero -->
   <div class="opp">
     <div class="opp-grid">
       <div class="big">
@@ -136,28 +186,60 @@ body{
       <div class="minis">
         <div class="mini"><div class="v teal" id="mDue">—</div><div class="l">Due now</div></div>
         <div class="mini"><div class="v" id="mSent">—</div><div class="l">Sent this mo.</div></div>
-        <div class="mini"><div class="v" id="mRate">65%</div><div class="l">Win-back rate</div></div>
+        <div class="mini"><div class="v">65%</div><div class="l">Win-back rate</div></div>
         <div class="mini"><div class="v" id="mAvg">—</div><div class="l">Avg job value</div></div>
       </div>
     </div>
   </div>
 
-  <!-- worklist -->
-  <div class="wl-head">
-    <div class="ttl">Due for follow-up<small id="wlCount">sorted by priority</small></div>
-    <div class="right">
-      <div class="toggle-ch" id="chToggle">
-        <button class="on" data-ch="email">Email</button>
-        <button data-ch="sms">SMS</button>
-      </div>
-      <span class="chip on" data-f="due">Due</span>
-      <span class="chip" data-f="sent">Sent</span>
+  <div class="filterbar">
+    <span class="flabel">Filter</span>
+    <select class="fsel" id="fWork"><option value="">All work types</option></select>
+    <select class="fsel" id="fArea"><option value="">All areas</option></select>
+    <select class="fsel" id="fTime">
+      <option value="">Any overdue</option>
+      <option value="30">30+ days overdue</option>
+      <option value="90">90+ days overdue</option>
+      <option value="180">180+ days overdue</option>
+    </select>
+    <span class="spacer"></span>
+    <div class="toggle-ch" id="chToggle">
+      <button class="on" data-ch="email">Email</button>
+      <button data-ch="sms">SMS</button>
+    </div>
+    <span class="chip on" data-f="due">Due</span>
+    <span class="chip" data-f="sent">Sent</span>
+  </div>
+
+  <div class="bulkbar" id="bulkbar">
+    <span class="bn" id="bulkN">0 selected</span>
+    <span class="bt" id="bulkT"></span>
+    <span class="sp"></span>
+    <button class="bulkbtn clear" onclick="clearSel()">Clear</button>
+    <button class="bulkbtn go" onclick="openBulk()">✦ Draft one message for all</button>
+  </div>
+
+  <div class="wl-cols">
+    <div><input type="checkbox" class="ckbx" id="selAll" onchange="toggleAll(this)"></div>
+    <div>Customer</div><div>Work done</div><div>Last touch</div><div class="num">Value</div><div class="num">Action</div>
+  </div>
+  <div id="feed"><div class="loading"><span class="spin3"></span>Loading customers…</div></div>
+</div>
+
+<!-- bulk modal -->
+<div class="bmw" id="bmw">
+  <div class="bbox">
+    <h2>Message this segment</h2>
+    <div class="bsub">One message, personalized to each customer. <b id="bmCount">0 customers</b> selected.</div>
+    <div class="btags" id="bmTags"></div>
+    <div id="bmBody">
+      <div class="bload"><span class="spin2"></span> Writing the message…</div>
+    </div>
+    <div class="bfoot" id="bmFoot" style="display:none">
+      <button class="cancel" onclick="closeBulk()">Cancel</button>
+      <button class="go" id="bmSend" onclick="sendBulk()">Send to <span id="bmSendN">0</span> customers</button>
     </div>
   </div>
-  <div class="wl-cols">
-    <div>Customer</div><div>Overdue</div><div>Value</div><div>Action</div>
-  </div>
-  <div id="feed"><div class="loading"><span class="spin2"></span>Loading customers…</div></div>
 </div>
 
 <div class="foot">REACTIVATION ENGINE · DEMO ENVIRONMENT · LIVE AI · SEEDED DATA</div>
@@ -169,18 +251,38 @@ const KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6
 const H={apikey:KEY,Authorization:'Bearer '+KEY,'Content-Type':'application/json'};
 const BIZ='Apex Home Services';
 let customers=[], filter='due', channel='email';
+let selected=new Set();
+let bulkDraft='';
 
 const $=id=>document.getElementById(id);
 function initials(n){return (n||'?').split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase();}
 function monthsSince(d){return Math.floor((Date.now()-new Date(d))/(30.44*864e5));}
 function overdueDays(c){const due=new Date(c.last_service_date);due.setDate(due.getDate()+(c.service_cycle_days||365));return Math.floor((Date.now()-due)/864e5);}
+function firstName(n){return (n||'').split(' ')[0];}
 
 async function load(){
   try{
     const r=await fetch(`${URL_}/rest/v1/reactivation_customers?select=*`,{headers:H});
     customers=await r.json();
-    renderHero(); renderFeed();
+    buildFilters(); renderHero(); renderFeed();
   }catch(e){ $('feed').innerHTML='<div class="loading">Could not load customers.</div>'; }
+}
+
+function buildFilters(){
+  const works=[...new Set(customers.map(c=>c.last_service).filter(Boolean))].sort();
+  const areas=[...new Set(customers.map(c=>c.area).filter(Boolean))].sort();
+  $('fWork').innerHTML='<option value="">All work types</option>'+works.map(w=>`<option>${w}</option>`).join('');
+  $('fArea').innerHTML='<option value="">All areas</option>'+areas.map(a=>`<option>${a}</option>`).join('');
+}
+
+function visibleList(){
+  let list=customers.filter(c=>filter==='sent'?c.status==='sent':c.status!=='sent');
+  const w=$('fWork').value, a=$('fArea').value, t=parseInt($('fTime').value||'0',10);
+  if(w) list=list.filter(c=>c.last_service===w);
+  if(a) list=list.filter(c=>c.area===a);
+  if(t) list=list.filter(c=>overdueDays(c)>=t);
+  if(filter!=='sent') list.sort((x,y)=>(overdueDays(y)+y.estimated_value)-(overdueDays(x)+x.estimated_value));
+  return list;
 }
 
 function renderHero(){
@@ -196,11 +298,13 @@ function renderHero(){
 }
 
 function renderFeed(){
-  let list=customers.filter(c=>filter==='sent'?c.status==='sent':c.status!=='sent');
-  // prioritize: most overdue * value to top
-  if(filter!=='sent') list.sort((a,b)=>(overdueDays(b)+b.estimated_value)-(overdueDays(a)+a.estimated_value));
-  $('wlCount').textContent = filter==='sent' ? `${list.length} contacted` : `${list.length} due · sorted by priority`;
-  if(!list.length){ $('feed').innerHTML='<div class="loading">No customers in this filter.</div>'; return; }
+  const list=visibleList();
+  // prune selection to visible due customers
+  const visIds=new Set(list.filter(c=>c.status!=='sent').map(c=>c.id));
+  selected=new Set([...selected].filter(id=>visIds.has(id)));
+  updateBulkbar();
+
+  if(!list.length){ $('feed').innerHTML='<div class="loading">No customers match these filters.</div>'; $('selAll').checked=false; return; }
 
   const maxOd=Math.max(...list.map(c=>Math.max(overdueDays(c),1)),1);
   $('feed').innerHTML=list.map(c=>{
@@ -210,13 +314,16 @@ function renderFeed(){
     const ms=monthsSince(c.last_service_date);
     const hasDraft=c.draft_message&&c.draft_message.trim();
     const sent=c.status==='sent';
-    return `<div class="row" data-id="${c.id}">
-      <div class="row-main" onclick="toggleDrawer('${c.id}')">
-        <div class="who">
+    const checked=selected.has(c.id)?'checked':'';
+    return `<div class="row ${selected.has(c.id)?'selected':''}" data-id="${c.id}">
+      <div class="row-main">
+        <div>${sent?'':`<input type="checkbox" class="ckbx" ${checked} onchange="toggleSel('${c.id}',this)">`}</div>
+        <div class="who" onclick="toggleDrawer('${c.id}')">
           <div class="av">${initials(c.customer_name)}</div>
-          <div><div class="nm">${c.customer_name}</div><div class="sv">${c.last_service} · ${ms} mo ago</div></div>
+          <div style="min-width:0"><div class="nm">${c.customer_name}</div><div class="ad">${c.address||''}${c.area?' · '+c.area:''}</div></div>
         </div>
-        <div class="meter">
+        <div class="svc">${c.last_service}<div class="ar">${ms} mo ago</div></div>
+        <div class="touch">
           ${sent?'<div class="txt" style="color:var(--green)">✓ reached out</div>':
             `<div class="bar"><i style="width:${pct}%;background:${col}"></i></div><div class="txt">${od>0?od+' days overdue':'due soon'}</div>`}
         </div>
@@ -227,8 +334,8 @@ function renderFeed(){
             `<button class="rowbtn" onclick="event.stopPropagation();draftFor('${c.id}',this)">✦ Draft</button>`}
         </div>
       </div>
-      <div class="drawer ${hasDraft&&!sent?'':''}" id="dw-${c.id}">
-        <div class="dh"><span class="ai">AI DRAFT</span> ${channel==='sms'?'text message':'email'} · personalized for ${c.customer_name.split(' ')[0]}</div>
+      <div class="drawer" id="dw-${c.id}">
+        <div class="dh"><span class="ai">AI DRAFT</span> ${channel==='sms'?'text message':'email'} · personalized for ${firstName(c.customer_name)}</div>
         <div class="dtext" id="dt-${c.id}">${hasDraft?c.draft_message:''}</div>
         <div class="da">
           <button class="minibtn send" onclick="sendFor('${c.id}')">Send ${channel==='sms'?'text':'email'}</button>
@@ -237,16 +344,97 @@ function renderFeed(){
       </div>
     </div>`;
   }).join('');
+  const dueVisible=list.filter(c=>c.status!=='sent');
+  $('selAll').checked = dueVisible.length>0 && dueVisible.every(c=>selected.has(c.id));
 }
 
-function toggleDrawer(id,force){
-  const dw=$('dw-'+id); if(!dw)return;
-  const c=customers.find(x=>x.id===id);
-  if(!(c.draft_message&&c.draft_message.trim())) return; // nothing to show yet
-  if(force) dw.classList.add('open');
-  else dw.classList.toggle('open');
+/* selection */
+function toggleSel(id,el){
+  if(el.checked) selected.add(id); else selected.delete(id);
+  const row=document.querySelector(`.row[data-id="${id}"]`);
+  if(row) row.classList.toggle('selected',el.checked);
+  const dueVisible=visibleList().filter(c=>c.status!=='sent');
+  $('selAll').checked = dueVisible.length>0 && dueVisible.every(c=>selected.has(c.id));
+  updateBulkbar();
+}
+function toggleAll(el){
+  const dueVisible=visibleList().filter(c=>c.status!=='sent');
+  if(el.checked) dueVisible.forEach(c=>selected.add(c.id));
+  else dueVisible.forEach(c=>selected.delete(c.id));
+  renderFeed();
+}
+function clearSel(){ selected.clear(); renderFeed(); }
+function updateBulkbar(){
+  const n=selected.size;
+  $('bulkbar').classList.toggle('show', n>0);
+  $('bulkN').textContent=`${n} selected`;
+  const val=customers.filter(c=>selected.has(c.id)).reduce((a,c)=>a+(c.estimated_value||0),0);
+  $('bulkT').textContent=n?`$${val.toLocaleString()} in potential work`:'';
 }
 
+/* segment description for the AI */
+function segmentHint(){
+  const sel=customers.filter(c=>selected.has(c.id));
+  const works=[...new Set(sel.map(c=>c.last_service))];
+  return works.length===1 ? works[0] : 'their last service with us';
+}
+
+/* bulk flow */
+async function openBulk(){
+  if(!selected.size) return;
+  $('bmw').classList.add('show');
+  $('bmCount').textContent=`${selected.size} customer${selected.size>1?'s':''}`;
+  $('bmSendN').textContent=selected.size;
+  const sel=customers.filter(c=>selected.has(c.id));
+  const works=[...new Set(sel.map(c=>c.last_service))];
+  const areas=[...new Set(sel.map(c=>c.area).filter(Boolean))];
+  $('bmTags').innerHTML=[...works.map(w=>`<span class="btag">${w}</span>`),...areas.map(a=>`<span class="btag">${a}</span>`)].join('');
+  $('bmBody').innerHTML='<div class="bload"><span class="spin2"></span> Writing the message…</div>';
+  $('bmFoot').style.display='none';
+  try{
+    const avgMs=Math.round(sel.reduce((a,c)=>a+monthsSince(c.last_service_date),0)/sel.length);
+    const r=await fetch(`${URL_}/functions/v1/reactivation-draft`,{
+      method:'POST',headers:H,
+      body:JSON.stringify({bulk:true,segment_hint:segmentHint(),months_since:avgMs,business_name:BIZ,channel})
+    });
+    const d=await r.json();
+    if(!r.ok||d.error) throw new Error(JSON.stringify(d.error||d));
+    bulkDraft=d.message;
+    const shown=bulkDraft.replace(/\{first_name\}/g,'<span class="tok">{first_name}</span>');
+    $('bmBody').innerHTML=`<div class="bdraft">
+      <div class="dh"><span class="ai">AI DRAFT</span> one ${channel==='sms'?'text':'email'} · sent individually to each person</div>
+      <div class="dtext">${shown}</div></div>
+      <div class="bhint">{first_name} fills in automatically for each customer, so every message reads personal.</div>`;
+    $('bmFoot').style.display='flex';
+  }catch(e){
+    $('bmBody').innerHTML=`<div class="bload">Could not draft. ${e.message}</div>`;
+  }
+}
+function closeBulk(){ $('bmw').classList.remove('show'); }
+
+async function sendBulk(){
+  const btn=$('bmSend'); btn.disabled=true; btn.innerHTML='<span class="spin"></span> Sending…';
+  const sel=customers.filter(c=>selected.has(c.id));
+  try{
+    await Promise.all(sel.map(c=>{
+      const personalized=bulkDraft.replace(/\{first_name\}/g,firstName(c.customer_name));
+      return fetch(`${URL_}/rest/v1/reactivation_customers?id=eq.${c.id}`,
+        {method:'PATCH',headers:H,body:JSON.stringify({draft_message:personalized,status:'sent'})});
+    }));
+    sel.forEach(c=>{ c.draft_message=bulkDraft.replace(/\{first_name\}/g,firstName(c.customer_name)); c.status='sent'; });
+    const n=sel.length;
+    selected.clear();
+    $('bmBody').innerHTML=`<div class="bdone"><div class="big">✓</div><h3>Sent to ${n} customer${n>1?'s':''}</h3><p>Each message was personalized with their first name.</p></div>`;
+    $('bmFoot').style.display='none';
+    renderHero(); renderFeed();
+    setTimeout(closeBulk, 2200);
+  }catch(e){
+    toast('Error sending: '+e.message);
+    btn.disabled=false; btn.innerHTML=`Send to <span id="bmSendN">${sel.length}</span> customers`;
+  }
+}
+
+/* individual flow */
 async function callAI(c){
   const r=await fetch(`${URL_}/functions/v1/reactivation-draft`,{
     method:'POST',headers:H,
@@ -256,7 +444,6 @@ async function callAI(c){
   if(!r.ok||d.error) throw new Error(JSON.stringify(d.error||d));
   return d.message;
 }
-
 async function draftFor(id,btn){
   const c=customers.find(x=>x.id===id);
   btn.disabled=true; btn.innerHTML='<span class="spin"></span>';
@@ -266,14 +453,21 @@ async function draftFor(id,btn){
     c.draft_message=msg; c.status='drafted';
     renderFeed();
     setTimeout(()=>{const dw=$('dw-'+id);if(dw)dw.classList.add('open');},60);
-    toast('Win-back message drafted');
+    toast('Message drafted');
   }catch(e){ btn.disabled=false; btn.textContent='✦ Draft'; toast('Error: '+e.message); }
+}
+function toggleDrawer(id,force){
+  const dw=$('dw-'+id); if(!dw)return;
+  const c=customers.find(x=>x.id===id);
+  if(!(c.draft_message&&c.draft_message.trim())) return;
+  if(force) dw.classList.add('open'); else dw.classList.toggle('open');
 }
 async function sendFor(id){
   await fetch(`${URL_}/rest/v1/reactivation_customers?id=eq.${id}`,{method:'PATCH',headers:H,body:JSON.stringify({status:'sent'})});
   const c=customers.find(x=>x.id===id); c.status='sent';
+  selected.delete(id);
   renderHero(); renderFeed();
-  toast('Sent · moved to reactivations');
+  toast('Sent');
 }
 function copyFor(id){
   const c=customers.find(x=>x.id===id);
@@ -281,12 +475,17 @@ function copyFor(id){
   toast('Copied to clipboard');
 }
 
-document.querySelector('.wl-head .right').addEventListener('click',e=>{
+/* filters + channel */
+$('fWork').addEventListener('change',renderFeed);
+$('fArea').addEventListener('change',renderFeed);
+$('fTime').addEventListener('change',renderFeed);
+document.querySelector('.filterbar').addEventListener('click',e=>{
   const chip=e.target.closest('.chip');
-  if(chip){ filter=chip.dataset.f; document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===chip)); renderFeed(); return; }
+  if(chip){ filter=chip.dataset.f; document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===chip)); selected.clear(); renderFeed(); return; }
   const chBtn=e.target.closest('[data-ch]');
   if(chBtn){ channel=chBtn.dataset.ch; document.querySelectorAll('[data-ch]').forEach(x=>x.classList.toggle('on',x===chBtn)); renderFeed(); }
 });
+$('bmw').addEventListener('click',e=>{if(e.target.id==='bmw')closeBulk();});
 
 let tt;
 function toast(m){const t=$('toast');$('toastTxt').textContent=m;t.classList.add('show');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),2400);}
